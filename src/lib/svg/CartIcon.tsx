@@ -2,10 +2,9 @@ export default function CartIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
+      width={24}
+      height={24}
       viewBox="0 0 24 24"
-      style={{ width: "25px", height: "25px" }}
     >
       <path
         fill="currentColor"

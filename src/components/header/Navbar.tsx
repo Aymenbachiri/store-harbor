@@ -2,6 +2,7 @@ import { Link } from "@/navigation";
 import MobileNavList from "./MobileNavList";
 import LargeScreenNavList from "./LargeScreenNavList";
 import ThemeSwitch from "./ThemeSwitch";
+import LangSwitcher from "./LangSwitcher";
 
 export default function Navbar() {
   return (
@@ -15,6 +16,7 @@ export default function Navbar() {
         </div>
         <LargeScreenNavList />
         <ThemeSwitch />
+        <LangSwitcher />
       </nav>
     </header>
   );

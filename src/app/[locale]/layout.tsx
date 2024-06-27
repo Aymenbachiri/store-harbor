@@ -27,6 +27,29 @@ export default function LocaleLayout({
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <body className={inter.className}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {
+              function getInitialColorMode() {
+                const persistedColorPreference = window.localStorage.getItem('theme');
+                const hasPersistedPreference = typeof persistedColorPreference === 'string';
+                if (hasPersistedPreference) {
+                  return persistedColorPreference;
+                }
+                const mql = window.matchMedia('(prefers-color-scheme: dark)');
+                const hasMediaQueryPreference = typeof mql.matches === 'boolean';
+                if (hasMediaQueryPreference) {
+                  return mql.matches ? 'dark' : 'light';
+                }
+                return 'light';
+              }
+              const colorMode = getInitialColorMode();
+              document.documentElement.setAttribute('data-theme', colorMode);
+            })()
+          `,
+          }}
+        />
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
