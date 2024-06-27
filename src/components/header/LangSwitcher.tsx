@@ -3,8 +3,8 @@ import { Arabic, English, French } from "../ChangeLanguageOptions";
 
 export default function LangSwitcher() {
   return (
-    <div className="dropdown dropdown-hover">
-      <div tabIndex={0} role="button" className=" m-1">
+    <main className="dropdown dropdown-hover">
+      <div tabIndex={0} role="button" className="m-1">
         <WorldIcon />
       </div>
       <ul
@@ -21,6 +21,6 @@ export default function LangSwitcher() {
           <French />
         </li>
       </ul>
-    </div>
+    </main>
   );
 }

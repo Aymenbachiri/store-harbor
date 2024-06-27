@@ -1,23 +1,22 @@
 import { Link } from "@/navigation";
 import MobileNavList from "./MobileNavList";
 import LargeScreenNavList from "./LargeScreenNavList";
-import ThemeSwitch from "./ThemeSwitch";
-import LangSwitcher from "./LangSwitcher";
+import NavHeader from "./NavHeader";
 
 export default function Navbar() {
   return (
-    <header className="container mx-auto">
-      <nav className="navbar bg-base-100">
-        <div className="navbar-start">
+    <NavHeader>
+      <nav className="navbar container mx-auto">
+        <div className="navbar-start md:ml-[30px] lg:ml-[150px]">
           <MobileNavList />
           <Link className="btn btn-ghost text-xl" href="/">
             home
           </Link>
         </div>
-        <LargeScreenNavList />
-        <ThemeSwitch />
-        <LangSwitcher />
+        <div className="navbar-end">
+          <LargeScreenNavList />
+        </div>
       </nav>
-    </header>
+    </NavHeader>
   );
 }

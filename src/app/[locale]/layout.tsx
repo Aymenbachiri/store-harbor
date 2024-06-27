@@ -6,6 +6,7 @@ import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "./globals.css";
+import LenisScrollProvider from "@/lib/providers/LenisScrollProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,8 +53,10 @@ export default function LocaleLayout({
         />
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <Navbar />
-            {children}
+            <LenisScrollProvider>
+              <Navbar />
+              {children}
+            </LenisScrollProvider>
           </NextIntlClientProvider>
         </Providers>
       </body>
