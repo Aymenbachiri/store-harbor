@@ -9,13 +9,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+      backgroundImage: {},
     },
   },
+  darkMode: ["class", '[data-theme="dark"]'],
   plugins: [daisyui],
+  daisyui: {
+    themes: ["light", "dark"],
+    darkTheme: "dark",
+    base: true,
+    styled: true,
+    utils: true,
+    prefix: "",
+    logs: true,
+    themeRoot: ":root",
+  },
 };
+
 export default config;
